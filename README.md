@@ -20,7 +20,7 @@ yarn add --dev extract-text-webpack-plugin
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 module.exports = {
 	module: {
-		loaders: [
+		rules: [
 			{ test: /\.css$/, loader: ExtractTextPlugin.extract({
 				fallbackLoader: "style-loader",
 				loader: "css-loader"
@@ -89,7 +89,7 @@ let extractLESS = new ExtractTextPlugin('stylesheets/[name].less');
 module.exports = {
   ...
   module: {
-    loaders: [
+    rules: [
       { test: /\.scss$/i, loader: extractCSS.extract(['css-loader','sass-loader']) },
       { test: /\.less$/i, loader: extractLESS.extract(['css-loader','less-loader']) },
       ...
